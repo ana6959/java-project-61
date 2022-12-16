@@ -35,3 +35,7 @@ ext.codecVersion = '1.9'
 compileJava {
     options.release = 17
 }
+
+run {
+    standardInput = System.in
+}
