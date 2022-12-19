@@ -9,6 +9,7 @@ public class App {
                 Please enter the game number and press Enter.
                  1 - Greet
                  2 - Even
+                 3 - Calc
                  0 - Exit""");
 
         Scanner scanner = new Scanner(System.in);
@@ -16,22 +17,21 @@ public class App {
         System.out.println("Your choice: " + userChoice);
 
 
-        final int optionZero = 0;
+    //    final int optionZero = 0;
         final int optionOne = 1;
         final int optionTwo = 2;
-
+        final int optionThree = 3;
 
         switch (userChoice) {
             case optionOne:
                 greeting();
                 break;
             case optionTwo:
-                greeting();
-                GameEven.resultIsEven();
+                Games.even();
                 break;
-            case optionZero:
+            case optionThree:
                 break;
-            default:
+            default: break;
         }
 
         scanner.close();
