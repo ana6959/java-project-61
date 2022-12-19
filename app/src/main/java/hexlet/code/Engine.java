@@ -1,7 +1,7 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.lang.Math;
+//import java.lang.Math;
 
 public class Engine {
 

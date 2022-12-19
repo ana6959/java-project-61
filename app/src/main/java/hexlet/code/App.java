@@ -30,6 +30,7 @@ public class App {
                 Games.even();
                 break;
             case optionThree:
+                Games.calc();
                 break;
             default: break;
         }
