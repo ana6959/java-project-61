@@ -45,10 +45,37 @@ public class Games {
 
         }
 
-
-    //        System.out.println(Arrays.deepToString(questionAnswers));
-
        Engine.runGame();
+
+    }
+
+    public static void GCD() {
+
+        intro = "Find the greatest common divisor of given numbers.";
+
+        var randomNumberOne = 0;
+        var randomNumberTwo = 0;
+
+        for (var i = 0; i < questionAnswers.length; i++) {
+            randomNumberOne = (int) Math.ceil(Math.random() * 50);
+            randomNumberTwo = (int) Math.ceil(Math.random() * 50);
+            questionAnswers[i][0] = randomNumberOne + " " + randomNumberTwo;
+
+            while ((randomNumberOne != 0) & (randomNumberTwo != 0)) {
+                if (randomNumberOne > randomNumberTwo) {
+                    randomNumberOne = randomNumberOne % randomNumberTwo;
+                } else {
+                    randomNumberTwo = randomNumberTwo % randomNumberOne;
+                }
+            }
+
+            questionAnswers[i][1] = String.valueOf(randomNumberOne + randomNumberTwo);
+
+        }
+
+    //            System.out.println(Arrays.deepToString(questionAnswers));
+
+        Engine.runGame();
 
     }
 

@@ -10,6 +10,7 @@ public class App {
                  1 - Greet
                  2 - Even
                  3 - Calc
+                 4 - GCD
                  0 - Exit""");
 
         Scanner scanner = new Scanner(System.in);
@@ -21,18 +22,15 @@ public class App {
         final int optionOne = 1;
         final int optionTwo = 2;
         final int optionThree = 3;
+        final int optionFour = 4;
 
         switch (userChoice) {
-            case optionOne:
-                greeting();
-                break;
-            case optionTwo:
-                Games.even();
-                break;
-            case optionThree:
-                Games.calc();
-                break;
-            default: break;
+            case optionOne -> greeting();
+            case optionTwo -> Games.even();
+            case optionThree -> Games.calc();
+            case optionFour -> Games.GCD();
+            default -> {
+            }
         }
 
         scanner.close();
