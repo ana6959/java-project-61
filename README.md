@@ -6,3 +6,4 @@ Even: https://asciinema.org/a/f0nlbxaEyNuPlAjNFj6SRMlxk
 Calc: https://asciinema.org/a/PhviaJC8f6ZWCLBuplTH7GgNr
 GCD: https://asciinema.org/a/Gh8JapebosPeoMl4hfapYAPFV
 Progression: https://asciinema.org/a/I0pg2CM7POPk9PXBtfB3wf3Dh
+Prime: https://asciinema.org/a/qDhWa7mK7kXonDr5Sn36cUny8
