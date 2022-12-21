@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Games {
@@ -16,7 +17,7 @@ public class Games {
             questionAnswers[i][0] = Integer.toString(randomNumber);
             questionAnswers[i][1] = (randomNumber % 2) == 0 ? "yes" : "no";
         }
-    //    System.out.println(Arrays.deepToString(questionAnswers));
+
         Engine.runGame();
     }
 
@@ -73,10 +74,50 @@ public class Games {
 
         }
 
-    //            System.out.println(Arrays.deepToString(questionAnswers));
-
         Engine.runGame();
 
     }
+
+    public static void Progression() {
+
+        intro = "What number is missing in the progression?";
+
+        var randomSize = 1;
+        var randomIndex = 0;
+        var randomProgression = 1;
+        var randomFirstuNmber = 1;
+        var hiddenNumber = 0;
+        Random rand = new Random();
+
+        for (var i = 0; i < questionAnswers.length; i++) {
+
+            randomSize = rand.nextInt(5 , 11);
+            randomIndex = rand.nextInt(0, (randomSize - 1));
+            randomProgression = rand.nextInt(2 , 10);
+            randomFirstuNmber = (int) (Math.random() * 10);
+            String[] progression = new String[randomSize];
+            questionAnswers[i][0] = "";
+
+
+            for (var j = 0; j < randomSize; j++) {
+                if (j == randomIndex) {
+                    hiddenNumber = randomFirstuNmber + j * randomProgression;
+                    progression[j] = "..";
+                } else {
+                    progression[j] = String.valueOf(randomFirstuNmber + j * randomProgression);
+                }
+                questionAnswers[i][0] += progression[j] + " ";
+            }
+
+            questionAnswers[i][1] = String.valueOf(hiddenNumber);
+
+        }
+
+     //   System.out.println(Arrays.deepToString(questionAnswers));
+        Engine.runGame();
+
+    }
+
+
 
 }
