@@ -1,8 +1,6 @@
 package hexlet.code;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Games {
 
@@ -50,7 +48,7 @@ public class Games {
 
     }
 
-    public static void GCD() {
+    public static void gcd() {
 
         intro = "Find the greatest common divisor of given numbers.";
 
@@ -78,14 +76,14 @@ public class Games {
 
     }
 
-    public static void Progression() {
+    public static void progression() {
 
         intro = "What number is missing in the progression?";
 
         var randomSize = 1;
         var randomIndex = 0;
         var randomProgression = 1;
-        var randomFirstuNmber = 1;
+        var randomFirstNumber = 1;
         var hiddenNumber = 0;
         Random rand = new Random();
 
@@ -94,17 +92,17 @@ public class Games {
             randomSize = rand.nextInt(5 , 11);
             randomIndex = rand.nextInt(0, (randomSize - 1));
             randomProgression = rand.nextInt(2 , 10);
-            randomFirstuNmber = (int) (Math.random() * 10);
+            randomFirstNumber = (int) (Math.random() * 10);
             String[] progression = new String[randomSize];
             questionAnswers[i][0] = "";
 
 
             for (var j = 0; j < randomSize; j++) {
                 if (j == randomIndex) {
-                    hiddenNumber = randomFirstuNmber + j * randomProgression;
+                    hiddenNumber = randomFirstNumber + j * randomProgression;
                     progression[j] = "..";
                 } else {
-                    progression[j] = String.valueOf(randomFirstuNmber + j * randomProgression);
+                    progression[j] = String.valueOf(randomFirstNumber + j * randomProgression);
                 }
                 questionAnswers[i][0] += progression[j] + " ";
             }
@@ -113,11 +111,41 @@ public class Games {
 
         }
 
-     //   System.out.println(Arrays.deepToString(questionAnswers));
         Engine.runGame();
 
     }
 
+
+    public static void prime() {
+
+        intro = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+        var randomNumber = 1;
+        Random rand = new Random();
+
+        for (var i = 0; i < questionAnswers.length; i++) {
+
+            randomNumber = rand.nextInt(2 , 100);
+            questionAnswers[i][0] = String.valueOf(randomNumber);
+
+            if ((randomNumber == 2) || (randomNumber == 3)) {
+                questionAnswers[i][1] = "yes";
+            }
+
+            for (var j = 2; j < (randomNumber / 2); j++) {
+                if (randomNumber % j == 0) {
+                    questionAnswers[i][1] = "no";
+                    break;
+                }
+                questionAnswers[i][1] = "yes";
+            }
+
+
+        }
+
+        Engine.runGame();
+
+    }
 
 
 }

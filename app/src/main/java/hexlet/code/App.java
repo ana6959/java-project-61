@@ -12,6 +12,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit
                 Your choice: """);
 
@@ -26,13 +27,15 @@ public class App {
         final int optionThree = 3;
         final int optionFour = 4;
         final int optionFive = 5;
+        final int optionSix = 6;
 
         switch (userChoice) {
             case optionOne -> greeting();
             case optionTwo -> Games.even();
             case optionThree -> Games.calc();
-            case optionFour -> Games.GCD();
-            case optionFive -> Games.Progression();
+            case optionFour -> Games.gcd();
+            case optionFive -> Games.progression();
+            case optionSix -> Games.prime();
             default -> {
             }
         }
