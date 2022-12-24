@@ -10,8 +10,9 @@ public class Games {
     public static void even() {
         intro = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         var randomNumber = 0;
+        var randomNumberUpper = 10;
         for (var i = 0; i < questionAnswers.length; i++) {
-            randomNumber = (int) (Math.random() * 10);
+            randomNumber = (int) (Math.random() * randomNumberUpper);
             questionAnswers[i][0] = Integer.toString(randomNumber);
             questionAnswers[i][1] = (randomNumber % 2) == 0 ? "yes" : "no";
         }
@@ -28,11 +29,12 @@ public class Games {
         var randomNumberTwo = 0;
         var randomOperatorIndex = 0;
         var randomOperator = ' ';
+        var randomNumberUpper = 50;
         char[] operator = {'+', '-', '*'};
 
         for (var i = 0; i < questionAnswers.length; i++) {
-            randomNumberOne = (int) (Math.random() * 50);
-            randomNumberTwo = (int) (Math.random() * 50);
+            randomNumberOne = (int) (Math.random() * randomNumberUpper);
+            randomNumberTwo = (int) (Math.random() * randomNumberUpper);
             randomOperatorIndex = (int) Math.round(Math.random() * 2);
             randomOperator = operator[randomOperatorIndex];
             questionAnswers[i][0] = randomNumberOne + " " + randomOperator + " " + randomNumberTwo;
@@ -54,10 +56,11 @@ public class Games {
 
         var randomNumberOne = 0;
         var randomNumberTwo = 0;
+        var randomNumberUpper = 50;
 
         for (var i = 0; i < questionAnswers.length; i++) {
-            randomNumberOne = (int) Math.ceil(Math.random() * 50);
-            randomNumberTwo = (int) Math.ceil(Math.random() * 50);
+            randomNumberOne = (int) Math.ceil(Math.random() * randomNumberUpper);
+            randomNumberTwo = (int) Math.ceil(Math.random() * randomNumberUpper);
             questionAnswers[i][0] = randomNumberOne + " " + randomNumberTwo;
 
             while ((randomNumberOne != 0) & (randomNumberTwo != 0)) {
@@ -85,14 +88,17 @@ public class Games {
         var randomProgression = 1;
         var randomFirstNumber = 1;
         var hiddenNumber = 0;
+        var randomNumberUpper = 10;
+        var randomStart = 5;
+        var randomFinish = 11;
         Random rand = new Random();
 
         for (var i = 0; i < questionAnswers.length; i++) {
 
-            randomSize = rand.nextInt(5, 11);
+            randomSize = rand.nextInt(randomStart,randomFinish);
             randomIndex = rand.nextInt(0, (randomSize - 1));
-            randomProgression = rand.nextInt(2, 10);
-            randomFirstNumber = (int) (Math.random() * 10);
+            randomProgression = rand.nextInt(2,10);
+            randomFirstNumber = (int) (Math.random() * randomNumberUpper);
             String[] progression = new String[randomSize];
             questionAnswers[i][0] = "";
 
@@ -121,11 +127,12 @@ public class Games {
         intro = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         var randomNumber = 1;
+        var randomFinish = 100;
         Random rand = new Random();
 
         for (var i = 0; i < questionAnswers.length; i++) {
 
-            randomNumber = rand.nextInt(2, 100);
+            randomNumber = rand.nextInt(2, randomFinish);
             questionAnswers[i][0] = String.valueOf(randomNumber);
 
             if ((randomNumber == 2) || (randomNumber == 3)) {

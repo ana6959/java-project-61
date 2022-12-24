@@ -14,7 +14,7 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit
-                Your choice: """);
+                Your choice:""");
 
         Scanner scanner = new Scanner(System.in);
         int userChoice = scanner.nextInt();
