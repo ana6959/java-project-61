@@ -89,9 +89,9 @@ public class Games {
 
         for (var i = 0; i < questionAnswers.length; i++) {
 
-            randomSize = rand.nextInt(5 , 11);
+            randomSize = rand.nextInt(5, 11);
             randomIndex = rand.nextInt(0, (randomSize - 1));
-            randomProgression = rand.nextInt(2 , 10);
+            randomProgression = rand.nextInt(2, 10);
             randomFirstNumber = (int) (Math.random() * 10);
             String[] progression = new String[randomSize];
             questionAnswers[i][0] = "";
@@ -125,7 +125,7 @@ public class Games {
 
         for (var i = 0; i < questionAnswers.length; i++) {
 
-            randomNumber = rand.nextInt(2 , 100);
+            randomNumber = rand.nextInt(2, 100);
             questionAnswers[i][0] = String.valueOf(randomNumber);
 
             if ((randomNumber == 2) || (randomNumber == 3)) {
