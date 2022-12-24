@@ -10,7 +10,8 @@ public class Games {
     public static void even() {
         intro = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         var randomNumber = 0;
-        var randomNumberUpper = 10;
+        int randomNumberUpper;
+        randomNumberUpper = 10;
         for (var i = 0; i < questionAnswers.length; i++) {
             randomNumber = (int) (Math.random() * randomNumberUpper);
             questionAnswers[i][0] = Integer.toString(randomNumber);
@@ -29,7 +30,8 @@ public class Games {
         var randomNumberTwo = 0;
         var randomOperatorIndex = 0;
         var randomOperator = ' ';
-        var randomNumberUpper = 50;
+        int randomNumberUpper;
+        randomNumberUpper = 50;
         char[] operator = {'+', '-', '*'};
 
         for (var i = 0; i < questionAnswers.length; i++) {
@@ -56,7 +58,8 @@ public class Games {
 
         var randomNumberOne = 0;
         var randomNumberTwo = 0;
-        var randomNumberUpper = 50;
+        int randomNumberUpper;
+        randomNumberUpper = 50;
 
         for (var i = 0; i < questionAnswers.length; i++) {
             randomNumberOne = (int) Math.ceil(Math.random() * randomNumberUpper);
@@ -95,9 +98,9 @@ public class Games {
 
         for (var i = 0; i < questionAnswers.length; i++) {
 
-            randomSize = rand.nextInt(randomStart,randomFinish);
+            randomSize = rand.nextInt(randomStart, randomFinish);
             randomIndex = rand.nextInt(0, (randomSize - 1));
-            randomProgression = rand.nextInt(2,10);
+            randomProgression = rand.nextInt(2, 10);
             randomFirstNumber = (int) (Math.random() * randomNumberUpper);
             String[] progression = new String[randomSize];
             questionAnswers[i][0] = "";
