@@ -2,7 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 public class App {
-    public static String userName;
     public static void main(String[] args) {
 
         System.out.print("""
@@ -20,8 +19,6 @@ public class App {
         int userChoice = scanner.nextInt();
         System.out.println();
 
-
-    //    final int optionZero = 0;
         final int optionOne = 1;
         final int optionTwo = 2;
         final int optionThree = 3;
@@ -31,24 +28,27 @@ public class App {
 
         switch (userChoice) {
             case optionOne -> greeting();
-            case optionTwo -> Games.even();
-            case optionThree -> Games.calc();
-            case optionFour -> Games.gcd();
-            case optionFive -> Games.progression();
-            case optionSix -> Games.prime();
+            case optionTwo -> GameEven.even();
+            case optionThree -> GameCalc.calc();
+            case optionFour -> GameGCD.gcd();
+            case optionFive -> GameProgression.progression();
+            case optionSix -> GamePrime.prime();
             default -> {
             }
         }
 
         scanner.close();
     }
-        public static void greeting() {
-            System.out.println("Welcome to the Brain Games!");
-            System.out.print("May I have your name? ");
-            Scanner scannerName = new Scanner(System.in);
-            userName = scannerName.next();
-            System.out.println("Hello, " + userName + '!');
-        }
+    public static void greeting() {
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner scannerName = new Scanner(System.in);
+        String userName = scannerName.next();
+        System.out.println("Hello, " + userName + '!');
+
+    }
+
 
 
 
