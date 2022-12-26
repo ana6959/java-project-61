@@ -33,8 +33,7 @@ public class App {
             case optionFour -> GameGCD.gcd();
             case optionFive -> GameProgression.progression();
             case optionSix -> GamePrime.prime();
-            default -> {
-            }
+            default -> throw new RuntimeException("Unknown input: " + userChoice);
         }
 
         scanner.close();
