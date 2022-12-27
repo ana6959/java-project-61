@@ -5,14 +5,14 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void runGame(String[][] questionsAnswers, String intro, int trialCount) {
+    public static void runGame(String[][] questionsAnswers, String description, int trialCount) {
 
         Scanner scannerName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userName = scannerName.next();
         System.out.println("Hello, " + userName + '!');
-        System.out.println(intro);
+        System.out.println(description);
         Scanner scanner = new Scanner(System.in);
 
         for (var i = 0; i < trialCount; i++) {
@@ -35,9 +35,6 @@ public class Engine {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
-
-
-
 
     }
 }

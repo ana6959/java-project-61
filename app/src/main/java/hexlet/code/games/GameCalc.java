@@ -1,27 +1,27 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 //import java.util.Arrays;
 public class GameCalc {
-
+    private static final String DESCRIPTION = "What is the result of the expression?";
+    private static final int TRIALCOUNT = 3;
+    private static final int MULTIPLIER = 10;
+    private static final char[] OPERATORS = {'+', '-', '*'};
     public static void calc() {
 
-        String intro = "What is the result of the expression?";
-
-        final int trialCount = 3;
-        String[][] questionsAnswers = new String[trialCount][2];
-        final int multiplier = 10;
+        String[][] questionsAnswers = new String[TRIALCOUNT][2];
 
         var randomNumberOne = 0;
         var randomNumberTwo = 0;
         var randomOperatorIndex = 0;
         var randomOperator = ' ';
-        char[] operator = {'+', '-', '*'};
 
         for (var i = 0; i < questionsAnswers.length; i++) {
-            randomNumberOne = (int) (Math.random() * multiplier);
-            randomNumberTwo = (int) (Math.random() * multiplier);
-            randomOperatorIndex = (int) Math.round(Math.random() * (operator.length - 1));
-            randomOperator = operator[randomOperatorIndex];
+            randomNumberOne = (int) (Math.random() * MULTIPLIER);
+            randomNumberTwo = (int) (Math.random() * MULTIPLIER);
+            randomOperatorIndex = (int) Math.round(Math.random() * (OPERATORS.length - 1));
+            randomOperator = OPERATORS[randomOperatorIndex];
             questionsAnswers[i][0] = randomNumberOne + " " + randomOperator + " " + randomNumberTwo;
 
             switch (randomOperator) {
@@ -39,7 +39,7 @@ public class GameCalc {
 
     //    System.out.println(Arrays.deepToString(questionsAnswers));
 
-        Engine.runGame(questionsAnswers, intro, trialCount);
+        Engine.runGame(questionsAnswers, DESCRIPTION, TRIALCOUNT);
 
     }
 

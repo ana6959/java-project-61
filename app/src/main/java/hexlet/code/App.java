@@ -1,5 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.games.GameCalc;
+import hexlet.code.games.GameEven;
+import hexlet.code.games.GameGCD;
+import hexlet.code.games.GamePrime;
+import hexlet.code.games.GameProgression;
+
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
@@ -13,12 +19,13 @@ public class App {
                 5 - Progression
                 6 - Prime
                 0 - Exit
-                Your choice:""");
+                Your choice:\s""");
 
         Scanner scanner = new Scanner(System.in);
         int userChoice = scanner.nextInt();
         System.out.println();
 
+        final int optionZero = 0;
         final int optionOne = 1;
         final int optionTwo = 2;
         final int optionThree = 3;
@@ -27,6 +34,8 @@ public class App {
         final int optionSix = 6;
 
         switch (userChoice) {
+            case optionZero -> {
+            }
             case optionOne -> greeting();
             case optionTwo -> GameEven.even();
             case optionThree -> GameCalc.calc();
