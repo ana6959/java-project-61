@@ -1,10 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.GameCalc;
-import hexlet.code.games.GameEven;
-import hexlet.code.games.GameGCD;
-import hexlet.code.games.GamePrime;
-import hexlet.code.games.GameProgression;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 public class App {
@@ -37,11 +37,11 @@ public class App {
             case optionZero -> {
             }
             case optionOne -> greeting();
-            case optionTwo -> GameEven.even();
-            case optionThree -> GameCalc.calc();
-            case optionFour -> GameGCD.gcd();
-            case optionFive -> GameProgression.progression();
-            case optionSix -> GamePrime.prime();
+            case optionTwo -> Even.run();
+            case optionThree -> Calc.run();
+            case optionFour -> GCD.run();
+            case optionFive -> Progression.run();
+            case optionSix -> Prime.run();
             default -> throw new RuntimeException("Unknown input: " + userChoice);
         }
 
@@ -56,8 +56,4 @@ public class App {
         System.out.println("Hello, " + userName + '!');
 
     }
-
-
-
-
 }
