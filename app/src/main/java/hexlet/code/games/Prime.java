@@ -17,7 +17,7 @@ public class Prime {
 
             randomNumber = Utils.generateNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             questionAnswer[0] = String.valueOf(randomNumber);
-            questionAnswer[1] = isPrime(randomNumber);
+            questionAnswer[1] = isPrime(randomNumber) ? "yes" : "no";
 
         }
 
@@ -27,20 +27,17 @@ public class Prime {
 
     }
 
-    public static String isPrime(int number) {
-
+    private static boolean isPrime(int number) {
         if (number < 2) {
-            return "no";
+            return false;
         }
 
-        var divider = 2;
-
-        while (divider <= number / 2) {
-            if (number % divider == 0) {
-                return "no";
+        for (int i = 2; i <= Math.sqrt(number); i += 1) {
+            if (number % i == 0) {
+                return false;
             }
-            divider += 1;
         }
-        return "yes";
+
+        return true;
     }
 }
